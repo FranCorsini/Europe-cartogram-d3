@@ -244,11 +244,11 @@
 
       var segmentized = location.search === "?segmentized",
           url = ["data",
-            segmentized ? "us-states-segmentized.topojson" : "us-states.topojson"
+            segmentized ? "europe.topojson" : "europe.topojson"
           ].join("/");
       d3.json(url, function(topo) {
         topology = topo;
-        geometries = topology.objects.states.geometries;
+        geometries = topology.objects.eu.geometries;
         d3.csv("data/nst_2011.csv", function(data) {
           rawData = data;
           dataById = d3.nest()
